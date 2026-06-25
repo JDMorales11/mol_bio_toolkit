@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mol-bio-toolkit"
+version = "0.1.0"
+description = "Herramientas de analisis y diseno de secuencias de ADN para biologia sintetica"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+authors = [
+    { name = "Jose Daniel Morales Cortes", email = "jd11.morales@gmail.com" }
+]
+keywords = ["bioinformatics", "synthetic-biology", "DNA", "primer-design", "codon-optimization"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+dependencies = [
+    "biopython>=1.81",
+    "pandas>=2.0",
+    "matplotlib>=3.7",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4",
+    "pytest-cov>=4.1",
+    "black>=23.0",
+    "ruff>=0.1",
+]
+
+[project.urls]
+Homepage = "https://github.com/JDMorales11/molecular-biology-toolkit"
+Issues = "https://github.com/JDMorales11/molecular-biology-toolkit/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
