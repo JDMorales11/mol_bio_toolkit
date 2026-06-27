@@ -94,10 +94,10 @@ The test suite (21 tests) uses the sfGFP sequence (superfolder GFP, Pédelacq et
 
 Analysis of the sfGFP coding sequence (iGEM Registry: [BBa_I746916](http://parts.igem.org/Part:BBa_I746916), 717 bp, *E. coli* codon-optimized, license: CC-BY-4.0) demonstrates the toolkit's core functionality on a biologically meaningful reference:
 
-- **ORF detection** identified 11 ORFs (≥100 bp, forward frames only) across the 717 bp sequence. The primary sfGFP ORF was correctly recovered at frame +1, positions 0–717, encoding 238 amino acids, consistent with the annotated 239-codon CDS (238 aa + stop codon).
-- **Nucleotide composition** returned a GC content of 38.77% (A: 34.59%, T: 26.64%, G: 19.67%, C: 19.11%), characteristic of *E. coli*-optimized synthetic genes with A/T-biased codon usage.
-- **Primer design** targeting the full sfGFP CDS (717 bp amplicon) produced a 30 nt forward primer (5′-ATGCGTAAAGGAGAAGAACTTTTCACTGGA-3′, Tm = 58.9°C, GC = 40.0%) and a 30 nt reverse primer (5′-TTATTTGTATAGTTCATCCATGCCATGTGT-3′, Tm = 56.2°C, GC = 33.3%), both within standard PCR annealing range (55–65°C).
-- **Codon optimization** of the sfGFP protein sequence (239 codons) using the *E. coli* K-12 table changed 128/239 codons and shifted GC content from 38.8% to 42.1%, reflecting substitution toward high-frequency *E. coli* codons. Optimization for *S. cerevisiae* changed 111/239 codons and shifted GC content to 35.8%, consistent with the characteristically lower GC bias of yeast-preferred codons.
+- **ORF detection** identified 5 ORFs (≥100 bp, forward frames only) across the 717 bp sequence. The primary sfGFP ORF was correctly recovered at frame +1, positions 0–717, encoding 238 amino acids, consistent with the annotated 239-codon CDS (238 aa + stop codon).
+- **Nucleotide composition** returned a GC content of 48.26% (A: 28.03%, T: 23.71%, G: 25.94%, C: 22.32%), reflecting the balanced codon usage of this *E. coli*-optimized synthetic reporter.
+- **Primer design** targeting the full sfGFP CDS (717 bp amplicon) produced a 24 nt forward primer (5′-ATGCGTAAAGGCGAAGAGCTGTTC-3′, Tm = 57.4°C, GC = 50.0%) and a 30 nt reverse primer (5′-TCATTTGTACAGTTCATCCATACCATGCGT-3′, Tm = 58.9°C, GC = 40.0%), both within standard PCR annealing range (55–65°C). The reverse primer flagged a hairpin warning and should be validated with Primer3 before experimental use.
+- **Codon optimization** of the sfGFP protein sequence (239 codons) using the *E. coli* K-12 table changed 110/239 codons and shifted GC content from 48.3% to 43.5%. Optimization for *S. cerevisiae* changed 139/239 codons and shifted GC content to 36.1%, consistent with the characteristically lower GC bias of yeast-preferred codons.
 
 > Pédelacq, J.D., Cabantous, S., Tran, T., Terwilliger, T.C., & Waldo, G.S. (2006). Engineering and characterization of a superfolder green fluorescent protein. *Nature Biotechnology*, 24(1), 79–88. https://doi.org/10.1038/nbt1172
 
