@@ -35,8 +35,8 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/JDMorales11/molecular-biology-toolkit"
-Issues = "https://github.com/JDMorales11/molecular-biology-toolkit/issues"
+Homepage = "https://github.com/JDMorales11/mol_bio_toolkit"
+Issues = "https://github.com/JDMorales11/mol_bio_toolkit/issues"
 
 [tool.setuptools.packages.find]
 where = ["src"]
