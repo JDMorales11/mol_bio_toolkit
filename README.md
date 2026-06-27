@@ -1,5 +1,7 @@
 # mol_bio_toolkit
 
+[![Tests](https://github.com/JDMorales11/mol_bio_toolkit/actions/workflows/tests.yml/badge.svg)](https://github.com/JDMorales11/mol_bio_toolkit/actions/workflows/tests.yml)
+
 > A Python toolkit for core molecular biology sequence analysis, designed for researchers working at the intersection of wet and dry lab workflows.
 
 ---
