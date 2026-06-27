@@ -26,7 +26,7 @@ This toolkit implements these analyses using standard thermodynamic models and p
 
 ### Installation
 
-Requires Python 3.8+. Dependencies: BioPython, pandas.
+Requires Python 3.10+. Dependencies: BioPython, pandas.
 
 ```bash
 git clone https://github.com/JDMorales11/mol_bio_toolkit.git
