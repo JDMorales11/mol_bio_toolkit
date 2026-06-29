@@ -14,6 +14,13 @@ This project adheres to [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)
 
 ---
 
+## [0.1.1] - 2026-06-29
+
+### Changed
+- Established Zenodo archiving integration for DOI minting
+
+---
+
 ## [0.1.0] - 2026-06-29
 
 ### Added
