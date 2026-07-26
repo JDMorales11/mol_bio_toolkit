@@ -224,7 +224,7 @@ def design_primers(
         len_range=len_range, tm_min=tm_min, tm_max=tm_max,
     )
     return {
-        "forward": forward,
-        "reverse": reverse,
-        "amplicon_size": amplicon_end - amplicon_start,
-    }
+    "forward": forward,
+    "reverse": reverse,
+    "amplicon_size": amplicon_end - amplicon_start,
+}
