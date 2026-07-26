@@ -1,9 +1,10 @@
 """Analisis de composicion de nucleotidos en secuencias de DNA."""
 
 from Bio.SeqUtils import gc_fraction
+from Bio.Seq import Seq
 
 
-def nucleotide_composition(sequence):
+def nucleotide_composition(sequence: str | Seq) -> dict[str, float]:
     """Calcula la composicion completa de una secuencia de DNA."""
     seq_str = str(sequence).upper()
     total = len(seq_str)

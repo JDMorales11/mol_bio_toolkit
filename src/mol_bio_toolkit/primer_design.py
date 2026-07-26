@@ -3,7 +3,7 @@
 from Bio.Seq import Seq
 
 
-def calculate_tm(primer):
+def calculate_tm(primer: str) -> float:
     """
     Calcula la temperatura de melting (Tm) de un primer.
 
@@ -32,7 +32,7 @@ def calculate_tm(primer):
     return 64.9 + 41 * (gc - 16.4) / n
 
 
-def gc_clamp(primer, n=3):
+def gc_clamp(primer: str, n: int = 3) -> bool:
     """
     Verifica si el primer tiene GC-clamp en su extremo 3'.
 
@@ -55,7 +55,7 @@ def gc_clamp(primer, n=3):
     return any(b in "GC" for b in tail)
 
 
-def has_hairpin(primer, min_stem=4):
+def has_hairpin(primer: str, min_stem: int = 4) -> bool:
     """
     Deteccion heuristica de estructura secundaria tipo hairpin.
 
@@ -89,7 +89,7 @@ def has_hairpin(primer, min_stem=4):
     return False
 
 
-def _evaluate_primer(seq, tm_min, tm_max):
+def _evaluate_primer(seq: str, tm_min: float, tm_max: float) -> dict:
     """Helper interno: calcula todas las metricas de un primer."""
     tm = calculate_tm(seq)
     gc = (seq.count("G") + seq.count("C")) / len(seq) * 100
@@ -104,8 +104,14 @@ def _evaluate_primer(seq, tm_min, tm_max):
     }
 
 
-def find_optimal_primer(sequence, anchor, direction="forward",
-                        len_range=(18, 30), tm_min=55, tm_max=65):
+def find_optimal_primer(
+    sequence: str | Seq,
+    anchor: int,
+    direction: str = "forward",
+    len_range: tuple[int, int] = (18, 30),
+    tm_min: float = 55,
+    tm_max: float = 65,
+) -> dict:
     """
     Busca iterativamente la longitud de primer que cae en el rango de Tm.
 
@@ -180,8 +186,14 @@ def find_optimal_primer(sequence, anchor, direction="forward",
     return best
 
 
-def design_primers(sequence, amplicon_start, amplicon_end,
-                   len_range=(18, 30), tm_min=55, tm_max=65):
+def design_primers(
+    sequence: str | Seq,
+    amplicon_start: int,
+    amplicon_end: int,
+    len_range: tuple[int, int] = (18, 30),
+    tm_min: float = 55,
+    tm_max: float = 65,
+) -> dict:
     """
     Disena un par forward/reverse optimizado para amplificar una region.
 

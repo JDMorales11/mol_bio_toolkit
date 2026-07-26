@@ -26,7 +26,7 @@ CODON_TABLES = {
 }
 
 
-def codon_optimize(cds_sequence, host="e_coli_k12"):
+def codon_optimize(cds_sequence: str | Seq, host: str = "e_coli_k12") -> dict:
     """
     Recodifica un CDS usando los codones preferidos del organismo host.
 

@@ -2,7 +2,7 @@
 
 from Bio.Seq import Seq
 
-def find_orfs(sequence, min_length=100):
+def find_orfs(sequence: str | Seq, min_length: int = 100) -> list[dict]:
     """
     Encuentra todos los ORFs en los 3 marcos de lectura forward.
 
