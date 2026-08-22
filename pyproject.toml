@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mol-bio-toolkit"
-version = "0.1.0"
+version = "0.2.0"
 description = "Herramientas de analisis y diseno de secuencias de ADN para biologia sintetica"
 readme = "README.md"
 license = { text = "MIT" }
