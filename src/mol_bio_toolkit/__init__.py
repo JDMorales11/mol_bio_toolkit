@@ -2,9 +2,10 @@
 mol_bio_toolkit
 ===============
 
-Herramientas para analisis y diseno de secuencias de DNA orientadas a
-biologia sintetica: deteccion de ORFs, composicion nucleotidica,
-diseno de primers y optimizacion de codones.
+Tools for the analysis and design of DNA sequences for synthetic
+biology: ORF detection, nucleotide composition, primer design, codon
+optimization (deterministic and probabilistic via order-1 Markov),
+back-translation, and homology search against NCBI BLAST.
 """
 
 from .orf_finder import find_orfs
@@ -16,9 +17,19 @@ from .primer_design import (
     find_optimal_primer,
     design_primers,
 )
-from .codon_optimizer import codon_optimize, CODON_TABLES
+from .codon_optimizer import (
+    codon_optimize,
+    back_translate,
+    CODON_TABLES,
+    CODON_FREQUENCIES,
+)
+from .sequence_search import (
+    blast_protein,
+    blast_nucleotide,
+    identify_and_backtranslate,
+)
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 
 __all__ = [
     "find_orfs",
@@ -29,5 +40,10 @@ __all__ = [
     "find_optimal_primer",
     "design_primers",
     "codon_optimize",
+    "back_translate",
     "CODON_TABLES",
+    "CODON_FREQUENCIES",
+    "blast_protein",
+    "blast_nucleotide",
+    "identify_and_backtranslate",
 ]
