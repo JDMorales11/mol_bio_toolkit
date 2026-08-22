@@ -12,6 +12,9 @@ databases: status for the year 2000." Nucleic Acids Research 28, 292.
 Tables downloaded from kazusa.or.jp/codon/ for:
   - Escherichia coli K12 (taxid 83333): 14 CDS's, 5122 codons
   - Saccharomyces cerevisiae (taxid 4932): 14411 CDS's, 6534504 codons
+  - Bacillus subtilis (taxid 1423): 2529 CDS's, 815445 codons
+  - Homo sapiens (taxid 9606): 93487 CDS's, 40662582 codons
+  - Pichia pastoris (taxid 4922) 137 CDS's, 81301 codons
 """
 
 import random
@@ -97,6 +100,75 @@ CODON_FREQUENCIES = {
         "AGT": 14.2, "AGC": 9.8, "AGA": 21.3, "AGG": 9.2,
         "GGT": 23.9, "GGC": 9.8, "GGA": 10.9, "GGG": 6.0,
     },
+    "b_subtilis": {
+        "TTT": 30.0, "TTC": 14.3,
+        "TTA": 19.8, "TTG": 15.8, "CTT": 21.8, "CTC": 10.7, "CTA": 4.9, "CTG": 23.0,
+        "ATT": 36.2, "ATC": 27.2, "ATA": 9.8,
+        "ATG": 26.3,
+        "GTT": 18.6, "GTC": 17.3, "GTA": 13.0, "GTG": 17.3,
+        "TCT": 12.7, "TCC": 8.3, "TCA": 14.6, "TCG": 6.5, "AGT": 6.8, "AGC": 14.4,
+        "CCT": 10.6, "CCC": 3.5, "CCA": 7.1, "CCG": 16.3,
+        "ACT": 8.7, "ACC": 9.0, "ACA": 21.6, "ACG": 14.9,
+        "GCT": 18.6, "GCC": 16.5, "GCA": 21.1, "GCG": 19.8,
+        "TAT": 23.3, "TAC": 12.6,
+        "CAT": 15.7, "CAC": 7.5,
+        "CAA": 20.4, "CAG": 18.5,
+        "AAT": 22.9, "AAC": 17.8,
+        "AAA": 48.4, "AAG": 20.8,
+        "GAT": 33.2, "GAC": 19.0,
+        "GAA": 48.1, "GAG": 22.6,
+        "TGT": 3.6, "TGC": 4.3,
+        "TGG": 10.7,
+        "CGT": 7.2, "CGA": 4.3, "CGC": 8.2, "CGG": 6.9, "AGA": 10.5, "AGG": 4.1,
+        "GGT": 13.0, "GGC": 23.3, "GGA": 21.8, "GGG": 11.2,
+        "TAA": 1.9,  "TGA": 0.8, "TAG": 0.5,         
+    },
+    "h_sapiens": {
+        "TTT": 17.6, "TTC": 20.3,
+        "TTA": 7.7, "TTG": 12.9, "CTT": 13.2, "CTC": 19.6, "CTA": 7.2, "CTG": 39.6,
+        "ATT": 16.0, "ATC": 20.8, "ATA": 7.5,
+        "ATG": 22.0,  
+        "GTT": 11.0, "GTC": 14.5, "GTA": 7.1, "GTG": 28.1,
+        "TCT": 15.2, "TCC": 17.7, "TCA": 12.2, "TCG": 4.4, "AGT": 12.1, "AGC": 19.5,
+        "CCT": 17.5, "CCC": 19.8, "CCA": 16.9, "CCG": 6.9,
+        "ACT": 13.1, "ACC": 18.9, "ACA": 15.1, "ACG": 6.1,
+        "GCT": 18.4, "GCC": 27.7, "GCA": 15.8, "GCG": 7.4,
+        "TAT": 12.2, "TAC": 15.3,
+        "CAT": 10.9, "CAC": 15.1,
+        "CAA": 12.3, "CAG": 34.2,
+        "AAT": 17.0, "AAC": 19.1,
+        "AAA": 24.4, "AAG": 31.9,
+        "GAT": 21.8, "GAC": 25.1,
+        "GAA": 29.0, "GAG": 39.6,
+        "TGT": 10.6, "TGC": 12.6,
+        "TGG": 13.2,
+        "CGT": 4.5, "CGC": 10.4, "CGA": 6.2, "CGG": 11.4, "AGA": 12.2, "AGG": 12.0,  
+        "GGT": 10.8, "GGC": 22.2, "GGA": 16.5, "GGG": 16.5,
+        "TAA": 1.0, "TGA": 1.6, "TAG": 0.8,
+    },
+    "p_pastoris": {
+        "TTT": 24.1, "TTC": 20.6,
+        "TTA": 15.6, "TTG": 31.5, "CTT": 15.9, "CTC": 7.6, "CTA": 10.7, "CTG": 14.9,
+        "ATT": 31.1, "ATC": 19.4, "ATA": 11.1,
+        "ATG": 18.7,
+        "GTT": 26.9, "GTC": 14.9, "GTA": 9.9, "GTG": 12.3,
+        "TCT": 24.4, "TCC": 16.5, "TCA": 15.2, "TCG": 7.4, "AGT": 12.5, "AGC": 7.6,
+        "CCT": 15.8, "CCC": 6.8, "CCA": 18.9, "CCG": 3.9,
+        "ACT": 22.4, "ACC": 14.5, "ACA": 13.8, "ACG": 6.0,
+        "GCT": 28.9, "GCC": 16.6, "GCA": 15.1, "GCG": 3.9,
+        "TAT": 16.0, "TAC": 18.1,
+        "CAT": 11.8, "CAC": 9.1,
+        "CAA": 25.4, "CAG": 16.3,
+        "AAT": 25.1, "AAC": 26.7,
+        "AAA": 29.9, "AAG": 33.8,
+        "GAT": 35.7, "GAC": 25.9,
+        "GAA": 37.4, "GAG": 29.0,
+        "TGT": 7.7, "TGC": 4.4,
+        "TGG": 10.3,
+        "CGT": 6.9, "CGC": 2.2, "CGA": 4.2, "CGG": 1.9, "AGA": 20.1, "AGG": 6.6,
+        "GGT": 25.5, "GGC": 8.1, "GGA": 19.1, "GGG": 5.8,
+        "TAA": 0.8, "TGA": 0.3, "TAG": 0.5,
+    }
 }
 
 _DINUCLEOTIDE_PENALTY = 0.15  # multiplicative factor, not a binary exclusion
@@ -199,7 +271,8 @@ def codon_optimize(
         Full CDS in reading frame (divisible by 3, includes the stop
         codon).
     host : str, default "e_coli_k12"
-        Target organism. Options: "e_coli_k12", "s_cerevisiae".
+        Target organism. Options: "e_coli_k12", "s_cerevisiae",
+        "b_subtilis", "h_sapiens", "p_pastoris".
     mode : {"max", "markov"}, default "max"
     seed : int, optional
         Random number generator seed (only applies to mode="markov").
