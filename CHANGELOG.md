@@ -10,6 +10,26 @@ This project adheres to [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)
 
 ---
 
+## [0.3.0] - 2026-08-22
+
+### Added
+- `orf_finder`: ORF detection now scans all 6 reading frames (3 forward, 3 reverse), not just forward. Closes Issue #1.
+- Each ORF dict now includes a `strand` field (`"+"` or `"-"`), redundant with the sign of `frame` but included for readability when filtering results.
+- Reverse-strand ORF coordinates (`start`, `end`) are mapped back to the original input sequence's coordinate system, so results can be sliced directly against the original sequence without manual coordinate conversion by the caller.
+- Tests: `tests/test_orf_finder.py` extended with 5 new tests covering reverse-strand detection, coordinate mapping correctness, mixed forward/reverse detection in the same sequence, and `min_length` filtering on the reverse strand.
+
+### Changed
+- Frame numbering follows the standard six-frame translation convention: `1, 2, 3` for the forward strand, `-1, -2, -3` for the reverse strand.
+- Package version bumped to `0.3.0` in `pyproject.toml` and `mol_bio_toolkit.__version__`.
+
+### Fixed
+- N/A
+
+### Known limitations
+- None remaining for ORF detection strand coverage. Overlapping ORFs and nested ORFs within the same frame are still reported independently (no deduplication or longest-ORF-only filtering).
+
+---
+
 ## [0.2.0] - 2026-08-22
 
 ### Added
@@ -82,7 +102,8 @@ This project adheres to [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)
 - Pédelacq, J.D., Cabantous, S., Tran, T., Terwilliger, T.C., & Waldo, G.S. (2006). Engineering and characterization of a superfolder green fluorescent protein. *Nature Biotechnology*, 24(1), 79–88. https://doi.org/10.1038/nbt1172
 - Nakamura, Y., Gojobori, T., & Ikemura, T. (2000). Codon usage tabulated from international DNA sequence databases: status for the year 2000. *Nucleic Acids Research*, 28(1), 292. https://doi.org/10.1093/nar/28.1.292
 
-[Unreleased]: https://github.com/JDMorales11/mol_bio_toolkit/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/JDMorales11/mol_bio_toolkit/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/JDMorales11/mol_bio_toolkit/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/JDMorales11/mol_bio_toolkit/compare/v0.1.1...v0.2.0
 [0.1.1]: https://github.com/JDMorales11/mol_bio_toolkit/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/JDMorales11/mol_bio_toolkit/releases/tag/v0.1.0
